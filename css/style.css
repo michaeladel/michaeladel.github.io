@@ -31,7 +31,7 @@ body {
 	margin: 10px 0;
 }
 
-.section-title {
+.title {
 	text-align: center;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 @media screen and (min-width: 991px) {
-	.section-title {
+	.title {
 		text-align: left;
 	}
 }
