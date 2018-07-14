@@ -22,6 +22,21 @@ body {
 	height: 125px;
 }
 
+.header h1,
+.header h4 {
+	text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+	.header h1,
+	.header h4 {
+		text-align: center;
+	}
+	.header img {
+		margin: auto;
+	}
+}
+
 .sepreator {
 	border-top: 4px solid #ccc;
 }
