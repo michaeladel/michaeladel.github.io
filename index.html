@@ -1,73 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Michael Adel</title>
+	<title>Matching Game</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="img/memory.png" type="image/x-icon" />
 </head>
 <body>
 	<div class="container">
-		<header class="header">
-			<div class="row">
-				<div class="col-md-6 col-sm-6 col-xs-12">
-					<img class="img-responsive img-circle" src="img/logo.jpg" alt="logo photo">
-				</div>
-				<div class="col-md-6 col-sm-6 col-xs-12">
-					<h1>Michael Adel</h1>
-					<h4>Front-end Ninja</h4>
-				</div>
-			</div>
-			<hr class="sepreator">
+		<header>
+			<h1 class="text-center">Matching Game</h1>
 		</header>
 		<main>
-			<div class="super-hero">
+			<div class="score-panel">
 				<div class="row">
 					<div class="col-md-12">
-						<img src="img/p-1.jpg" class="img-responsive" alt="super photo">
+						<ul class="stars">
+							<li><i class="fa fa-star"></i></li>
+							<li><i class="fa fa-star"></i></li>
+							<li><i class="fa fa-star"></i></li>
+						</ul>
+						<span class="moves">0 </span> Moves
+						<span class="restart">
+							<i class="fa fa-repeat"></i>
+						</span>
+					</div>
+					<div class="col-md-12">
+						<label class="minutes">00</label>:<label class="seconds">00</label>
 					</div>
 				</div>
 			</div>
-			<section class="feature-work">
+			<div class="cards-grid">
 				<div class="row">
-					<div class="col-md-12">
-						<h3 class="title">
-							Featured Work
-						</h3>
+					<div class="col-xs-3">
+						<div class="card" id="card-1">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="card" id="card-2">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="card" id="card-3">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="card" id="card-4">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4">
-						<div class="project">
-							<img src="img/p-2.jpg" class="img-responsive" data-toggle="modal" data-target="#myModal" alt="Project-1">
-							<h3> Project-1 </h3>
-							<p>
-								<a href="https://github.com/michaeladel" target="_blank">github.com/michaeladel</a>
-							</p>
+					<div class="col-xs-3">
+						<div class="card" id="card-5">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="project">
-							<img src="img/p-3.jpg" class="img-responsive" data-toggle="modal" data-target="#myModal2" alt="Project-2">
-							<h3> Project-2 </h3>
-							<p>
-								<a href="https://github.com/michaeladel" target="_blank">github.com/michaeladel</a>
-							</p>
+					<div class="col-xs-3">
+						<div class="card" id="card-6">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="project">
-							<img src="img/p-4.jpg" class="img-responsive" data-toggle="modal" data-target="#myModal3" alt="Project-3">
-							<h3> Project-3 </h3>
-							<p>
-								<a href="https://github.com/michaeladel" target="_blank">github.com/michaeladel</a>
-							</p>
+					<div class="col-xs-3">
+						<div class="card" id="card-7">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="card" id="card-8">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</section>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="card" id="card-9">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="card" id="card-10">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="card" id="card-11">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="card" id="card-12">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="card" id="card-13">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="card" id="card-14">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="card" id="card-15">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="card" id="card-16">
+							<div class="flipper">
+								<div class="front">
+									<!-- front content -->
+								</div>
+								<div class="back">
+									<!-- back content -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 	</div>
 	<div id="myModal" class="modal fade" role="dialog">
@@ -75,53 +243,28 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">x</button>
-					<h4 class="modal-title text-uppercase">Project-1</h4>
+					<h4 class="modal-title text-uppercase">congratulations!</h4>
 				</div>
 				<div class="modal-body">
-					<p>Project-1 Description</p>
+					<h3 class="text-center">You Won the Game <i class="fa fa-trophy"></i></h3>
+					<p class="modal-hint">moves: <span class="moves"> </span></p>
+					<p class="modal-hint">time: <label class="minutes"></label>:<label class="seconds"></label></p>
+					<span class="modal-hint">rating:</span>
+					<ul class="stars">
+						<li><i class="fa fa-star"></i></li>
+						<li><i class="fa fa-star"></i></li>
+						<li><i class="fa fa-star"></i></li>
+					</ul>
 				</div>
 				<div class="modal-footer">
+					<button type="button" class="btn btn-info" onclick="playAgain()">Play again</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="myModal2" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">x</button>
-					<h4 class="modal-title text-uppercase">Project-2</h4>
-				</div>
-				<div class="modal-body">
-					<p>Project-2 Description</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="myModal3" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">x</button>
-					<h4 class="modal-title text-uppercase">Project-3</h4>
-				</div>
-				<div class="modal-body">
-					<p>Project-3 Description</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<footer class="footer">
-		Copyright © Michael Adel
-	</footer>
 	<script src="js/jquery-2.1.3.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>

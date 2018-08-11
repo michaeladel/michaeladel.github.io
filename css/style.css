@@ -1,91 +1,176 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
 body {
-	font: 14px 'Lato', sans-serif; 
-	background-color: #FEF7F7;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* header */
-.header {
-	margin-top: 10px;
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
 }
 
-.header h1 {
-	font-weight: 300;
-	text-transform: uppercase;
+/* Styles for the cards */
+.cards-grid {
+    background: linear-gradient(141deg, #108dc7 0%, #00b4db 51%, #8a8bce 75%);
+    padding: 75px;
 }
 
-.header h4 {
-	text-transform: uppercase;
-	font-weight: bold;
+/* entire container, keeps perspective */
+.card {
+    perspective: 1000px;
+    margin: 10px auto;
+}
+.card, .front, .back {
+    width: 150px;
+    height: 150px;
 }
 
-.header img {
-	height: 125px;
+/* hide back of card during swap */
+.front, .back {
+    backface-visibility: hidden;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.header h1,
-.header h4 {
-	text-align: right;
+/* front card, placed above back */
+.front {
+    z-index: 2;
+    background: #2a3d4a;
+    transform: rotateY(0deg);
 }
 
-@media screen and (max-width: 768px) {
-	.header h1,
-	.header h4 {
-		text-align: center;
-	}
-	.header img {
-		margin: auto;
-	}
+/* back, initially hidden card */
+.back {
+    background: #89cff0;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #fff;
 }
 
-.sepreator {
-	border-top: 4px solid #ccc;
+/* flip the card when open it */
+.card.open .flipper {
+    transform: rotateY(180deg);
 }
 
-/* content */
-.feature-work {
-	margin: 10px 0;
+.card.match .back {
+    background: #00d0ba;
 }
 
-.title {
-	text-align: center;
+.card.mismatch .back {
+    background: #f77171;
+}
+/* flip speed goes here */
+.flipper {
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+/* Styles for the Score Panel */
+
+ .score-panel {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-@media screen and (min-width: 768px) {
-	.super-hero img {
-		height: 500px;
-		width: 100%;
-	}
+.stars {
+    margin: 0 10px;
+    padding: 0;
+    display: inline-block;
 }
 
-@media screen and (min-width: 991px) {
-	.title {
-		text-align: left;
-	}
+.stars li {
+    list-style: none;
+    display: inline-block;
 }
 
-.project {
-	margin: 10px 0;
+.score-panel .restart {
+    margin: 0 10px;
+    cursor: pointer;
 }
 
-.project img {
-	cursor: pointer;
+.modal-hint {
+    font-size: 16px;
+}
+/* Responsive Sizes of Cards */
+@media screen and (max-width: 991px) {
+    .cards-grid {  
+        padding: 20px;
+    }
 }
 
-.project h3 {
-	text-align: center;
-	text-transform: uppercase;
+@media screen and (max-width: 700px) {
+    .cards-grid {  
+        padding: 20px;
+    }
+    .card, .front, .back {
+        width: 115px;
+        height: 115px;
+        border-radius: 10px;
+    }
 }
 
-.project p {
-	text-align: center;
+@media screen and (max-width: 600px) {
+    .card, .front, .back {
+        width: 100px;
+        height: 100px;
+    }
 }
 
-/* footer */
-.footer {
-	margin-top: 10px;
-	text-align: center;
-	background-color: #ccc;
-	padding: 10px 0;
-	text-transform: uppercase;
-	font-weight: bold;
+@media screen and (max-width: 550px) {
+    .card, .front, .back {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card, .front, .back {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card, .front, .back {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card, .front, .back {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .card, .front, .back {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .card, .front, .back {
+        width: 35px;
+        height: 35px;
+    }
 }
