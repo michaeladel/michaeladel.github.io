@@ -25,6 +25,7 @@ var patterns = ["fa fa-diamond", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-b
 "fa fa-leaf", "fa fa-bicycle", "fa fa-diamond", "fa fa-bomb", "fa fa-leaf", "fa fa-bomb", "fa fa-bolt", "fa fa-bicycle",
 "fa fa-paper-plane-o", "fa fa-cube"];
 
+// timer function from https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript
 function setTime() {
 	if(clicks > 0) {
 		++totalSeconds;

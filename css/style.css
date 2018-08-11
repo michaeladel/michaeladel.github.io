@@ -25,6 +25,7 @@ body {
 .cards-grid {
     background: linear-gradient(141deg, #108dc7 0%, #00b4db 51%, #8a8bce 75%);
     padding: 75px;
+    margin: 30px 0;
 }
 
 /* entire container, keeps perspective */
