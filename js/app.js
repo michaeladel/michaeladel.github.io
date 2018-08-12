@@ -1,29 +1,30 @@
 // check if both cards are the same pattern
-var checkCard = [];
+let checkCard = [];
 // helper array for storing clicked cards IDs so i can remove "open" class if they are different
-var cardID = [];
+let cardID = [];
 // number of moves to win the game
-var moves = 0;
+let moves = 0;
 // for detecting if all cards are done
-var totalCardsMatched = 0;
+let totalCardsMatched = 0;
 // selecting all cards to start the game
-var cards = document.querySelectorAll(".card");
+let cards = document.querySelectorAll(".card");
 // selecting stars to modifiy rating
-var stars = document.querySelector(".stars");
-var modalStars = document.getElementsByClassName("stars")[1];
+let stars = document.querySelector(".stars");
+let modalStars = document.getElementsByClassName("stars")[1];
 // to prevent show new card if card was opened when reset 
-var checkRestart = false;
+let checkRestart = false;
 // number of clicks to initiate timer
-var clicks = 0;
-var minutesLabel = document.getElementsByClassName("minutes")[0];
-var secondsLabel = document.getElementsByClassName("seconds")[0];
-var modalMinutesLabel = document.getElementsByClassName("minutes")[1];
-var modalSecondsLabel = document.getElementsByClassName("seconds")[1];
-var totalSeconds = 0;
+let clicks = 0;
+let minutesLabel = document.getElementsByClassName("minutes")[0];
+let secondsLabel = document.getElementsByClassName("seconds")[0];
+let modalMinutesLabel = document.getElementsByClassName("minutes")[1];
+let modalSecondsLabel = document.getElementsByClassName("seconds")[1];
+let totalSeconds = 0;
+let timeInterval;
 // the patterns for the cards
-var patterns = ["fa fa-diamond", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-bolt", "fa fa-cube", "fa fa-anchor",
-"fa fa-leaf", "fa fa-bicycle", "fa fa-diamond", "fa fa-bomb", "fa fa-leaf", "fa fa-bomb", "fa fa-bolt", "fa fa-bicycle",
-"fa fa-paper-plane-o", "fa fa-cube"];
+const patternsArray = ["fa fa-diamond", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-bolt", "fa fa-cube",
+"fa fa-leaf", "fa fa-bicycle", "fa fa-bomb"];
+const patterns = patternsArray.concat(patternsArray);
 
 // timer function from https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript
 function setTime() {
@@ -73,7 +74,9 @@ function startGame() {
 function checkEnd() {
 	//if all 16 cards are showed and matched
 	if (totalCardsMatched === 16) {
+		// reset timer 
 		clicks = 0;
+		clearInterval(timeInterval);
 		document.getElementsByClassName("moves")[1].innerHTML = moves;
 		$("#myModal").modal();
 	}
@@ -158,7 +161,7 @@ function handleClickEvent(event) {
 	// initiate timer start at first click
 	if(clicks === 1)
 	{	
-		var timeInterval = setInterval(setTime, 1000);
+		timeInterval = setInterval(setTime, 1000);
 	}
 	//  prevet clicking more than 2 times at one card
 	if ($(this).hasClass("open")) {
@@ -192,6 +195,8 @@ function restart() {
 		// reset timer 
 		clicks = 0;
 		totalSeconds = 0;
+		setTime();
+		clearInterval(timeInterval);
 		handleRating();
 		// to prevent show new card if card was opened when reset 
 		checkRestart = true;
